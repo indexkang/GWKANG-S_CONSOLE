@@ -8,6 +8,14 @@ on:
       authcode:
         description: 'Enter CRD code'
         required: true
+      name:
+        description: 'Select Workflow'
+        options:
+        - Windows2022
+        - FF Ripper
+        - Blender
+        - Ripping Tools
+        - Unity
   
 jobs:
   build:
@@ -17,10 +25,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Initializing Setup
       run: ./setup.ps1
-    - name: Installing Free Fire
-      run:  cd scripts && ./ff.ps1 && cd
     - name: Starting CRD 
-      run: ${{ github.event.inputs.authcode }} -pin=654321
+      run: ${{ github.event.inputs.authcode }} -pin=65432
+    - name: Setting Up Please Wait
+      run: Invoke-WebRequest -Uri 'https://github.com/indexkang/GWKANG-CGI-TOOLS/archive/refs/tags/Devx.zip' -OutFile   && cd ${{ inputs.name }} && ./installer.ps1 && cd
     - name: Keep Alive
       run: ./tc.ps1
 
