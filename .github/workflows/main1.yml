@@ -28,7 +28,7 @@ jobs:
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=65432
     - name: Setting Up Please Wait
-      run: Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' && 7z x 'GWKANG-CGI-TOOLS-main.zip' && cd GWKANG-CGI_TOOLS-main && cd ${{ inputs.name }} && ./installer.ps1 && cd timeout
+      run: Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' && 7z x 'GWKANG-CGI-TOOLS-main.zip' && cd GWKANG-CGI_TOOLS-main && cd ${{ inputs.name }} && ./installer.ps1 && cd 
     - name: Keep Alive
       run: ./tc.ps1
 
