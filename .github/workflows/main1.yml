@@ -10,6 +10,7 @@ on:
         required: true
       name:
         description: 'Select Workflow'
+        type: choice
         options:
         - Windows2022
         - FF Ripper
