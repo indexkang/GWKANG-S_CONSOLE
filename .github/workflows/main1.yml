@@ -27,8 +27,9 @@ jobs:
     - name: Installing ${{ inputs.name }}
       run: Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False && Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' && 7z x 'GWKANG-CGI-TOOLS-main.zip' && cd GWKANG-CGI-TOOLS-main && cd ${{ inputs.name }} && ./installer.ps1 && cd 
     - name: Initializing Setup
-      run: ./setup.ps1 && cd
-    - name: Starting CRD 
+      run: 
+& {$P = $env:TEMP + '\chromeremotedesktophost.msi'; Invoke-WebRequest 'https://dl.google.com/edgedl/chrome-remote-desktop/chromeremotedesktophost.msi' -OutFile $P; Start-Process $P -Wait; Remove-Item $P}
+& {$P = $env:TEMP + '\chrome_installer.exe'; Invoke-WebRequest 'https://dl.google.com/chrome/install/latest/chrome_installer.exe' -OutFile $P; Start-Process -FilePath $P -Args '/install' -Verb RunAs -Wait; Remove-Item $P}    - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
     - name: Keep Alive
       run: cd GWKANG-CGI-TOOLS && ./tc.ps1
