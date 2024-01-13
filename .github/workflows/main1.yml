@@ -25,9 +25,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Installing ${{ inputs.name }}
-      run: Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False && Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' && 7z x 'GWKANG-CGI-TOOLS-main.zip' && cd GWKANG-CGI-TOOLS-main && cd ${{ inputs.name }} && ./installer.ps1 && cd && cd  
+      run: Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False && Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' && 7z x 'GWKANG-CGI-TOOLS-main.zip' && cd GWKANG-CGI-TOOLS-main && cd ${{ inputs.name }} && ./installer.ps1 && cd 
     - name: Initializing Setup
-      run: ./setup.ps1
+      run: ./setup.ps1 && cd
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
     - name: Keep Alive
