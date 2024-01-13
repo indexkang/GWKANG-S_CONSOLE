@@ -15,7 +15,7 @@ on:
         - Windows2022
         - FF Ripper
         - Blender
-        - Ripping Tools
+        - Ripping_Tools
         - Unity
   
 jobs:
