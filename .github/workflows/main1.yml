@@ -17,12 +17,12 @@ on:
         - Blender
         - Ripping_Tools
         - Unity
-     os:
-       description: 'Choose Windows Version'
-       type: choice
-       options:
-       - windows-2022
-       - windows-2019
+      os:
+        description: 'Choose Windows Version'
+        type: choice
+        options:
+        - windows-2022
+        - windows-2019
   
 jobs:
   build:
