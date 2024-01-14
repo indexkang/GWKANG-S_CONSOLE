@@ -12,15 +12,21 @@ on:
         description: 'Select Workflow'
         type: choice
         options:
-        - Windows2022
+        - Windows
         - FF_Ripper
         - Blender
         - Ripping_Tools
         - Unity
+     os:
+       description: 'Choose Windows Version'
+       type: choice
+       options:
+       - windows-2022
+       - windows-2019
   
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: ${{ inputs.os}}
 
     steps:
     - uses: actions/checkout@v2
@@ -28,7 +34,7 @@ jobs:
       run: Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False && Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' && 7z x 'GWKANG-CGI-TOOLS-main.zip' && cd GWKANG-CGI-TOOLS-main && cd ${{ inputs.name }} && ./installer.ps1 && cd && cd
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
-    - name: Keep Alive
+    - name: RDP $env:computername IS READY!
       run: cd GWKANG-CGI-TOOLS && ./tc.ps1
 
   
