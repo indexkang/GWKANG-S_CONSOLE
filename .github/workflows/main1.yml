@@ -35,7 +35,7 @@ jobs:
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
     - name: RDP $Env:COMPUTERNAME IS READY!
-      run: cd GWKANG-CGI-TOOLS && ./tc.ps1
+      run: cd GWKANG-CGI-TOOLS-main && ./tc.ps1
 
   
     
