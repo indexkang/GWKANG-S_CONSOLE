@@ -34,7 +34,7 @@ jobs:
       run: Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False && Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' && 7z x 'GWKANG-CGI-TOOLS-main.zip' && cd GWKANG-CGI-TOOLS-main && cd ${{ inputs.name }} && ./installer.ps1 && cd && cd
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
-    - name: RDP $env:computername IS READY!
+    - name: RDP $Env:COMPUTERNAME IS READY!
       run: cd GWKANG-CGI-TOOLS && ./tc.ps1
 
   
