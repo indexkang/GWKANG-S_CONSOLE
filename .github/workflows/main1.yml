@@ -33,7 +33,6 @@ jobs:
     - name: Installing ${{ inputs.name }}
       run: Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False && Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' && 7z x 'GWKANG-CGI-TOOLS-main.zip' && cd GWKANG-CGI-TOOLS-main && cd ${{ inputs.name }} && ./installer.ps1 && cd
     - name: Mounting Google Drive
-      required: false
       run: ./gdrive.ps1 && cd
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
