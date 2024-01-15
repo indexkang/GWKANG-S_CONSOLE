@@ -38,7 +38,7 @@ jobs:
       continue-on-error: true
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
-    - name: RDP IS READY!
+    - name: RDP IS RUNNING!!
       run: cd GWKANG-CGI-TOOLS-main && ./tc.ps1
 
   
