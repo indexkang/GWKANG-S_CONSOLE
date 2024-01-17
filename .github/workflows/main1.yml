@@ -41,12 +41,19 @@ jobs:
         ./installer.ps1 
         cd
     - name: Mounting Google Drive
-      run:  Invoke-WebRequest ${{ github.secrects.GDRIVE_MOUNT }} -OutFile gdrive.ps1 &&./gdrive.ps1 && cd
+      run:  |
+        Invoke-WebRequest ${{ github.secrects.GDRIVE_MOUNT }} -OutFile gdrive.ps1 
+        ./gdrive.ps1 
+        cd
       continue-on-error: true
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
     - name: RDP IS RUNNING!!
-      run: cd GWKANG-CGI-TOOLS-main && ./tc.ps1
+      run: | 
+        $Env:COMPUTERNAME
+        '@echo off'
+        cd GWKANG-CGI-TOOLS-main 
+        ./tc.ps1
       timeout-minutes: 300
 
   
