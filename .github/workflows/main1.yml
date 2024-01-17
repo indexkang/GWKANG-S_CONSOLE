@@ -27,7 +27,6 @@ on:
 jobs:
   build:
     runs-on: ${{ inputs.os}}
-    timeout-minutes: 355
 
     steps:
     - uses: actions/checkout@v2
@@ -40,6 +39,7 @@ jobs:
       run: ${{ github.event.inputs.authcode }} -pin=654321
     - name: RDP IS RUNNING!!
       run: cd GWKANG-CGI-TOOLS-main && ./tc.ps1
+      timeout-minutes: 300
 
   
     
