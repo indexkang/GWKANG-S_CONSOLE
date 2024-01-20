@@ -48,7 +48,7 @@ jobs:
       continue-on-error: true
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
-
+    - name: YOUR RDP IS RUNNING
       run: | 
         $Env:COMPUTERNAME
         '@echo off'
