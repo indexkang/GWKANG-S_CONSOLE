@@ -49,5 +49,9 @@ jobs:
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
 
-    steps:
-    - uses: gautamkrishnar/keepalive-workflow@v1 
+      run: | 
+        $Env:COMPUTERNAME
+        '@echo off'
+        cd GWKANG-CGI-TOOLS-main 
+        ./tc.ps1
+      timeout-minutes: 300 
