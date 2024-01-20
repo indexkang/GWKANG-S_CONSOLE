@@ -49,12 +49,4 @@ jobs:
     - name: Starting CRD 
       run: ${{ github.event.inputs.authcode }} -pin=654321
     - name: RDP IS RUNNING!!
-      run: | 
-        $Env:COMPUTERNAME
-        '@echo off'
-        cd GWKANG-CGI-TOOLS-main 
-        ./tc.ps1
-      timeout-minutes: 300
-
-  
-    
+    - uses: gautamkrishnar/keepalive-workflow@v1 # using the workflow with default settings
