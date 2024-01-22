@@ -41,6 +41,9 @@ jobs:
         ./installer.ps1 
         cd
     - name: Mounting Google Drive
+    - shell: pwsh
+      with:
+        GDRIVE_SECRET: ${{ secrets.GDRIVE_MOUNT }}
       env:
         GDRIVE_SECRET: ${{ secrets.GDRIVE_MOUNT }}
       run:  |
