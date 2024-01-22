@@ -35,6 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setting Up ${{ inputs.name }}
+    - uses: levibostian/action-hide-sensitive-inputs@v1   
       run:  |
        '@echo off' 
         Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
@@ -45,14 +46,17 @@ jobs:
         ./installer.ps1 
         cd
     - name: Mounting Google Drive
+    - uses: levibostian/action-hide-sensitive-inputs@v1
       run:  |
         Invoke-WebRequest -Uri '${{ inputs.gdrive }}' -OutFile gdrive.ps1 
         ./gdrive.ps1 
         cd
       continue-on-error: true
     - name: Starting CRD 
+    - uses: levibostian/action-hide-sensitive-inputs@v1
       run: ${{ github.event.inputs.authcode }} -pin=654321
     - name: YOUR RDP IS RUNNING
+    - uses: levibostian/action-hide-sensitive-inputs@v1
       run: | 
         $Env:COMPUTERNAME
         '@echo off'
