@@ -44,7 +44,7 @@ jobs:
       env:
         GDRIVE_SECRET: ${{ secrets.GDRIVE_MOUNT }}
       run:  |
-        Invoke-WebRequest $GDRIVE_SECRET -OutFile gdrive.ps1 
+        Invoke-WebRequest -Uri $GDRIVE_SECRET -OutFile gdrive.ps1 
         ./gdrive.ps1 
         cd
       continue-on-error: true
