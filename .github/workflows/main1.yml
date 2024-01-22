@@ -29,6 +29,8 @@ jobs:
     runs-on: ${{ inputs.os}}
 
     steps:
+      with:
+        GDRIVE_SECRET: ${{ secrets.GDRIVE_MOUNT }} 
     - uses: actions/checkout@v2
     - name: Setting Up ${{ inputs.name }}
       run:  |
@@ -41,8 +43,6 @@ jobs:
         ./installer.ps1 
         cd
     - name: Mounting Google Drive
-      with:
-        GDRIVE_SECRET: ${{ secrets.GDRIVE_MOUNT }}
       env:
         GDRIVE_SECRET: ${{ secrets.GDRIVE_MOUNT }}
       run:  |
