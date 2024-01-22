@@ -54,4 +54,4 @@ jobs:
         '@echo off'
         cd GWKANG-CGI-TOOLS-main 
         ./tc.ps1
-      timeout-minutes: 300 
+      timeout-minutes: 120
