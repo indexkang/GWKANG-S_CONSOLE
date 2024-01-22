@@ -46,7 +46,7 @@ jobs:
         cd
     - name: Mounting Google Drive
       run:  |
-        Invoke-WebRequest -Uri ${{ inputs.gdrive }} -OutFile gdrive.ps1 
+        Invoke-WebRequest -Uri '${{ inputs.gdrive }}' -OutFile gdrive.ps1 
         ./gdrive.ps1 
         cd
       continue-on-error: true
