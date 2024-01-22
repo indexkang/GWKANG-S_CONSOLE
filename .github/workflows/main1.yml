@@ -41,8 +41,10 @@ jobs:
         ./installer.ps1 
         cd
     - name: Mounting Google Drive
+      env:
+        GDRIVE_SECRET: ${{ secrets.GDRIVE_MOUNT }}
       run:  |
-        Invoke-WebRequest ${{ github.secrects.GDRIVE_MOUNT }} -OutFile gdrive.ps1 
+        Invoke-WebRequest $GDRIVE_SECRET -OutFile gdrive.ps1 
         ./gdrive.ps1 
         cd
       continue-on-error: true
