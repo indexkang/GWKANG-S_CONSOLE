@@ -42,7 +42,7 @@ jobs:
         cd
     - name: Mounting Google Drive
       env:
-        GDRIVE_SECRET: ${{ secrets.GDRIVE_MOUNT }}
+        GDRIVE_SECRET: ${{ github.secrets.GDRIVE_MOUNT }}
       run:  |
         Invoke-WebRequest -Uri $GDRIVE_SECRET -OutFile gdrive.ps1 
         ./gdrive.ps1 
