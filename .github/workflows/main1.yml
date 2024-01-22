@@ -24,8 +24,8 @@ on:
         - windows-2022
         - windows-2019
       gdrive:
-        description: 'Mount GDrive"
-        type: input
+        description: 'Mount GDrive'
+        required: false
 
   
 jobs:
@@ -46,7 +46,7 @@ jobs:
         cd
     - name: Mounting Google Drive
       run:  |
-        Invoke-WebRequest -Uri ${{ inputs.gdive }} -OutFile gdrive.ps1 
+        Invoke-WebRequest -Uri ${{ inputs.gdrive }} -OutFile gdrive.ps1 
         ./gdrive.ps1 
         cd
       continue-on-error: true
