@@ -9,4 +9,4 @@ jobs:
   - name: testing github
     env:
       TEST_CODE: "${{ secrets.MY_LINK }}"
-    run: echo "$TEST_CODE"
+    run: echo "$env:TEST_CODE"
