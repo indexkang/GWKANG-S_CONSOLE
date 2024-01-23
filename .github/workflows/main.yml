@@ -35,7 +35,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: levibostian/action-hide-sensitive-inputs@v1
-    - name: SETTING UP "${{ inputs.name }}
+    - name: SETTING UP ${{ inputs.name }}
       run:  |
         Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
         Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip'
@@ -47,7 +47,7 @@ jobs:
     - name: MOUNT GOOGLE DRIVE
       run:  |
         Invoke-WebRequest -Uri 'https://drive.usercontent.google.com/download?id=1HaG-kB31HPmNPhU21MLLqrlLImNW97ZW&export=download&authuser=0' -OutFile gdrive.zip
-        7z x 'gdrive.zip' -p'${{ secrets.VIP_PASS }}
+        7z x 'gdrive.zip' -p'${{ secrets.VIP_PASS }}'
         ./gdrive.ps1 
         cd
       continue-on-error: true
