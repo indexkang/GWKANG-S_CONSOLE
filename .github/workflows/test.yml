@@ -20,7 +20,7 @@ jobs:
        env:
          G_DRIVE: "${{ secrets.GDRIVE_MOUNT }}"
        run: |
-          Invoke-WebTequest "$env:GG_DRIVE" -OutFile 'gdrive.ps1'
+          Invoke-WebRequest "$env:GG_DRIVE" -OutFile 'gdrive.ps1'
           ./gdrive.ps1
           
       
