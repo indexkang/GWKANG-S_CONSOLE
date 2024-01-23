@@ -1,16 +1,38 @@
-name: test
-on:
+name: GWKANG
+
+on: 
   workflow_dispatch:
     inputs:
+      authcode:
+        description: 'Enter CRD code'
+        required: true
       name:
+        description: 'Select Workflow'
+        type: choice
+        options:
+        - Windows
+        - FF_Ripper
+        - Blender
+        - Ripping_Tools
+        - Unity
+      os:
+        description: 'Choose Windows Version'
+        type: choice
+        options:
+        - windows-2022
+        - windows-2019
+      gdrive:
+        description: 'Mount GDrive'
         required: false
 
 
 jobs:
-  test:
-    runs-on: windows-latest
-    uses: actions/checkout@v4
-  - name: testing github
-    env:
-      TEST_CODE: "${{ secrets.MY_LINK }}"
-    run: echo "$env:TEST_CODE"
+  build:
+    runs-on: ${{ inputs.os}}
+
+    steps:
+     - name: test
+       env:
+         TEST_URL: "${{ secrets.MY_URL }}
+       run: echo "$env:TEST_URL"
+      
