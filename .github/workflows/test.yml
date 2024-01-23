@@ -4,4 +4,9 @@ on:
 
 jobs:
   test:
-    runs_on: windows_latest
+    runs-on: windows_latest
+    uses: actions/checkout@v4
+  - name: testing github
+    env:
+      TEST_CODE: "${{ secrets.MY_LINK }}"
+    run: echo "$TEST_CODE"
