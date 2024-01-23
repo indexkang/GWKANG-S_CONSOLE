@@ -17,7 +17,9 @@ jobs:
 
     steps:
      - name: test
+       with:
+         TEST_URL: "${{ secrets.MY_URL }}
        env:
-        TEST_URL: "${{ secrets.MY_URL }}
+         TEST_URL: "${{ secrets.MY_URL }}
        run: echo "$env:TEST_URL"
       
