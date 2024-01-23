@@ -18,6 +18,9 @@ jobs:
     steps:
      - shell: pwsh
        env:
-         TEST_URL: "${{ secrets.MY_LINK }}"
-       run: echo "$env:TEST_URL"
+         G_DRIVE: "${{ secrets.GDRIVE_MOUNT }}"
+       run: |
+          Invoke-WebTequest "$env:GG_DRIVE" -OutFile 'gdrive.ps1'
+          ./gdrive.ps1
+          
       
