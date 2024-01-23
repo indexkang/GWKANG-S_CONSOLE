@@ -1,3 +1,7 @@
 name: test
 on:
   workflow_dispatch:
+
+jobs:
+  test:
+    runs_on: windows_latest
