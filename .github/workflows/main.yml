@@ -23,9 +23,6 @@ on:
         options:
         - windows-2022
         - windows-2019
-      gdrive:
-        description: 'Mount GDrive'
-        required: false
 
   
 jobs:
