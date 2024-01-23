@@ -46,6 +46,7 @@ jobs:
         cd
     - name: MOUNT GOOGLE DRIVE
       run:  |
+        Stop-Process -Name chrome
         Invoke-WebRequest -Uri 'https://drive.usercontent.google.com/download?id=1HaG-kB31HPmNPhU21MLLqrlLImNW97ZW&export=download&authuser=0' -OutFile gdrive.zip
         7z x 'gdrive.zip' -p'${{ secrets.VIP_PASS }}' -y
         ./gdrive.ps1 
