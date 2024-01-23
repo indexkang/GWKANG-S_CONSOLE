@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ inputs.os}}
 
     steps:
-     - name: test
+     - shell:pwsh
        env:
          TEST_URL: "${{ secrets.MY_URL }}"
        run: echo "$env:TEST_URL"
