@@ -3,27 +3,12 @@ name: GWKANG
 on: 
   workflow_dispatch:
     inputs:
-      authcode:
-        description: 'Enter CRD code'
-        required: true
-      name:
-        description: 'Select Workflow'
-        type: choice
-        options:
-        - Windows
-        - FF_Ripper
-        - Blender
-        - Ripping_Tools
-        - Unity
       os:
         description: 'Choose Windows Version'
         type: choice
         options:
         - windows-2022
         - windows-2019
-      gdrive:
-        description: 'Mount GDrive'
-        required: false
 
 
 jobs:
@@ -33,6 +18,6 @@ jobs:
     steps:
      - name: test
        env:
-         TEST_URL: "${{ secrets.MY_URL }}
+        TEST_URL: "${{ secrets.MY_URL }}
        run: echo "$env:TEST_URL"
       
