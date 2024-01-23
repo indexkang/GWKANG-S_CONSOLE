@@ -51,7 +51,8 @@ jobs:
         ./gdrive.ps1 
         cd
       continue-on-error: true
-    - run: ${{ github.event.inputs.authcode }} -pin=654321
+    - name: STARTING RDP
+      run: ${{ github.event.inputs.authcode }} -pin=654321
     - name: YOUR RDP IS RUNNING
       run: | 
         $Env:COMPUTERNAME
