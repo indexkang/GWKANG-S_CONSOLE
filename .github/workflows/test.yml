@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: windows_latest
+    runs-on: windows-latest
     uses: actions/checkout@v4
   - name: testing github
     env:
