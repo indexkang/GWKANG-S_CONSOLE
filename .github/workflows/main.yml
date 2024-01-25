@@ -40,9 +40,9 @@ jobs:
         cd GWKANG-CGI-TOOLS-main 
         cd ${{ inputs.name }} 
         ./installer.ps1 
-        cd
+        cd | Out-Null
     - name: STARTING RDP
-      run: ${{ github.event.inputs.authcode }} -pin=654321
+      run: ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
     - name: YOUR RDP IS RUNNING
       run: | 
         $Env:COMPUTERNAME
