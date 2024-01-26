@@ -34,20 +34,24 @@ jobs:
     - uses: levibostian/action-hide-sensitive-inputs@v1
     - name: SETTING UP ${{ inputs.name }}
       run:  |
-        Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
-        Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip'
-        7z x 'GWKANG-CGI-TOOLS-main.zip'
-        cd GWKANG-CGI-TOOLS-main 
-        cd ${{ inputs.name }} 
-        ./installer.ps1 
+        # RUNNING SETUP
+        Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False | Out-Null
+        Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' | Out-Null
+        7z x 'GWKANG-CGI-TOOLS-main.zip' | Out-Null
+        cd GWKANG-CGI-TOOLS-main | Out-Null
+        cd ${{ inputs.name }} | Out-Null
+        ./installer.ps1 | Out-Null
         cd | Out-Null
     - name: STARTING RDP
-      run: ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
+      run: |
+        # STARTING CHROME REMOTE DESKTOP
+        ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
     - name: YOUR RDP IS RUNNING
-      run: | 
+      run: |
+        # KEEPING IT ALIVE 
         $Env:COMPUTERNAME
         cd GWKANG-CGI-TOOLS-main 
-        ./counter.ps1
+        ./counter.ps1 | Out-Null
       timeout-minutes: 40
     - run: ./counter2.ps1
       timeout-minutes: 40
