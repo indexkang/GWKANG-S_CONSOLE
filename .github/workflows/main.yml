@@ -49,7 +49,7 @@ jobs:
         cd GWKANG-CGI-TOOLS-main 
         ./counter.ps1
       timeout-minutes: 40
-   - run: ./counter2.ps1
+    - run: ./counter2.ps1
       timeout-minutes: 40
-   - run: ./counter3.ps1
+    - run: ./counter3.ps1
       timeout-minutes: 40
