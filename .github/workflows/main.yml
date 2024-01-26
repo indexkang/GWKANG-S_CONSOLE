@@ -47,5 +47,7 @@ jobs:
       run: | 
         $Env:COMPUTERNAME
         cd GWKANG-CGI-TOOLS-main 
-        ./tc.ps1
-      timeout-minutes: 120
+        ./counter.ps1
+      timeout-minutes: 40
+   - run: ./counter2.ps1
+   - run: ./counter3.ps1
