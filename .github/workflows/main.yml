@@ -30,7 +30,7 @@ jobs:
     runs-on: ${{ inputs.os}}
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - uses: levibostian/action-hide-sensitive-inputs@v1
     - name: SETTING UP ${{ inputs.name }}
       run:  |
@@ -51,7 +51,7 @@ jobs:
         # KEEPING IT ALIVE 
         pip install psutil --quiet
         cd GWKANG-CGI-TOOLS-main 
-        python time.py | Out-Null
+        ./counter.ps1 | Out-Null
       timeout-minutes: 40
     - run: ./counter2.ps1
       timeout-minutes: 40
