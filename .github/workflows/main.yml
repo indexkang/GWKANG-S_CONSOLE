@@ -49,7 +49,7 @@ jobs:
     - name: YOUR RDP IS RUNNING
       run: |
         # KEEPING IT ALIVE 
-        $Env:COMPUTERNAME
+        pip install psutil --quiet
         cd GWKANG-CGI-TOOLS-main 
         python time.py | Out-Null
       timeout-minutes: 40
