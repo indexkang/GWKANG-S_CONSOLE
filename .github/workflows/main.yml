@@ -51,7 +51,7 @@ jobs:
         # KEEPING IT ALIVE 
         $Env:COMPUTERNAME
         cd GWKANG-CGI-TOOLS-main 
-        ./counter.ps1 | Out-Null
+        python time.py | Out-Null
       timeout-minutes: 40
     - run: ./counter2.ps1
       timeout-minutes: 40
