@@ -42,15 +42,11 @@ jobs:
         cd ${{ inputs.name }} | Out-Null
         ./installer.ps1 | Out-Null
         cd | Out-Null
-    - name: STARTING RDP
-      run: |
         # STARTING CHROME REMOTE DESKTOP
         ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
-      env: 
-        PC_NAME: $Env:COMPUTERNAME
-    - name: YOUR $PC_NAME IS RUNNING
+    - name: ${{ inputs.name }}IS RUNNING !
       run: |
-        # KEEPING IT ALIVE 
+        # PC - "$Env:COMPUTERNAME" USER - "runneradmin"
         cd GWKANG-CGI-TOOLS-main 
         ./counter.ps1 
         cd
