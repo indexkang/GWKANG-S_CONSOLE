@@ -49,13 +49,19 @@ jobs:
     - name: YOUR RDP IS RUNNING
       run: |
         # KEEPING IT ALIVE 
-        pip install psutil --quiet
         cd GWKANG-CGI-TOOLS-main 
-        ./counter.ps1 | Out-Null
+        ./counter.ps1 
+        cd
       timeout-minutes: 31
     - name: force + half hour
-      run: ./counter2.ps1
+      run: # KEEPING IT ALIVE 
+        cd GWKANG-CGI-TOOLS-main 
+        ./counter2.ps1 
+        cd
       timeout-minutes: 31
     - name: force + half hour
-      run: ./counter3.ps1
+      run: # KEEPING IT ALIVE 
+        cd GWKANG-CGI-TOOLS-main 
+        ./counter3.ps1 
+        cd
       timeout-minutes: 31
