@@ -46,21 +46,25 @@ jobs:
       run: |
         # STARTING CHROME REMOTE DESKTOP
         ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
-    - name: YOUR RDP IS RUNNING
+      env: 
+        PC_NAME: $Env:COMPUTERNAME
+    - name: YOUR $PC_NAME IS RUNNING
       run: |
         # KEEPING IT ALIVE 
         cd GWKANG-CGI-TOOLS-main 
         ./counter.ps1 
         cd
       timeout-minutes: 31
-    - name: force + half hour
-      run: # KEEPING IT ALIVE 
+    - name: KEEPING ALIVE SCRIPT 2
+      run: |
+        # KEEPING IT ALIVE 
         cd GWKANG-CGI-TOOLS-main 
         ./counter2.ps1 
         cd
       timeout-minutes: 31
-    - name: force + half hour
-      run: # KEEPING IT ALIVE 
+    - name: KEEPING ALIVE SCRIPT 3
+      run: |
+        # KEEPING IT ALIVE 
         cd GWKANG-CGI-TOOLS-main 
         ./counter3.ps1 
         cd
