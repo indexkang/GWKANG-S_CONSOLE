@@ -50,18 +50,15 @@ jobs:
         cd GWKANG-CGI-TOOLS-main 
         ./counter.ps1 
         cd
-      timeout-minutes: 31
     - name: KEEPING ALIVE SCRIPT 2
       run: |
         # KEEPING IT ALIVE 
         cd GWKANG-CGI-TOOLS-main 
         ./counter2.ps1 
         cd
-      timeout-minutes: 31
     - name: KEEPING ALIVE SCRIPT 3
       run: |
         # KEEPING IT ALIVE 
         cd GWKANG-CGI-TOOLS-main 
         ./counter3.ps1 
         cd
-      timeout-minutes: 31
