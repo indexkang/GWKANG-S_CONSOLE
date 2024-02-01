@@ -46,7 +46,7 @@ jobs:
         ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
     - name: ${{ inputs.name }} IS RUNNING !
       run: |
-        # PC - "$Env:COMPUTERNAME" USER - "runneradmin"
+        $Env:COMPUTERNAME #USER - "runneradmin"
         cd GWKANG-CGI-TOOLS-main 
         ./counter.ps1 
         cd
