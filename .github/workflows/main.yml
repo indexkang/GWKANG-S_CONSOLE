@@ -52,8 +52,10 @@ jobs:
         pip install psutil --quiet
         cd GWKANG-CGI-TOOLS-main 
         ./counter.ps1 | Out-Null
-      timeout-minutes: 40
-    - run: ./counter2.ps1
-      timeout-minutes: 40
-    - run: ./counter3.ps1
-      timeout-minutes: 40
+      timeout-minutes: 31
+    - name: force + half hour
+      run: ./counter2.ps1
+      timeout-minutes: 31
+    - name: force + half hour
+      run: ./counter3.ps1
+      timeout-minutes: 31
