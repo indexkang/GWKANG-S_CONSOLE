@@ -14,4 +14,4 @@ jobs:
     steps:
     - name: test
       run: |
-        apt install blender
+        sudo apt install blender
