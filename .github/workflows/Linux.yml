@@ -15,4 +15,7 @@ jobs:
     - name: test
       run: |
         sudo apt install xfce4
+        wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -P /tmp
+        apt install /tmp/chrome-remote-desktop_current_amd64.deb
+        DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AfJohXm0wmfRvzJx_f9PBtIuR0BVmAhBAF4Qvwg3mv-er4Xy4lRku9wa9HsCPIDx3AawIw" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
         sudo apt install blender
