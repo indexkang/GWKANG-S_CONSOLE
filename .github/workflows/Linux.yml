@@ -17,5 +17,7 @@ jobs:
         sudo apt install xfce4 2>/dev/null
         wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -P /tmp
         sudo apt install /tmp/chrome-remote-desktop_current_amd64.deb
-        ${{ inputs.authcode }}-pin=123456
+    - name: crd
+      run: | 
+         ${{ inputs.authcode }}-pin=123456
         sudo apt install blender
