@@ -19,5 +19,6 @@ jobs:
         sudo apt install /tmp/chrome-remote-desktop_current_amd64.deb
     - name: crd
       run: | 
-        ${{ inputs.authcode }}-pin=123456
+        ${{ inputs.authcode }}
+        123456
         sudo apt install blender
