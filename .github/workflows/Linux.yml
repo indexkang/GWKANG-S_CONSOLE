@@ -1,0 +1,15 @@
+name: ubunu
+
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Enter CRD code'
+        required: true
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+  steps:
