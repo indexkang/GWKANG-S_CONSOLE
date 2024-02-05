@@ -14,8 +14,4 @@ jobs:
     steps:
     - name: test
       run: |
-        #!/bin/bash
-
-        adduser yusuf
-        usermod -aG sudo yusuf
-        echo 'yusuf ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/custom && chmod 0440 /etc/sudoers.d/custom
+        apt install blender
