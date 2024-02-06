@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: test
       run: |
-        sudo apt install xfce4 /dev/null 2>&1
+        sudo apt install xfce4 
         wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -P /tmp
         sudo apt install /tmp/chrome-remote-desktop_current_amd64.deb
     - name: crd
