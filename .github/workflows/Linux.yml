@@ -21,3 +21,9 @@ jobs:
       run: | 
         ${{ inputs.authcode }} --pin=123456
         sudo apt install blender
+        #!/bin/bash
+        # in file ~/bin/keepalive.sh
+        while true ; do
+           echo " " ; sleep 300
+           done
+        # end script
