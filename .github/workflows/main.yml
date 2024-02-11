@@ -44,19 +44,9 @@ jobs:
         ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
     - name: ${{ inputs.name }} IS RUNNING !
       run: |
-        $Env:COMPUTERNAME #USER - "runneradmin"
+        #RUNNING
+        $Env:COMPUTERNAME
         cd GWKANG-CGI-TOOLS-main 
         ./counter.ps1 
-        cd
-    - name: KEEPING ALIVE SCRIPT 2
-      run: |
-        # KEEPING IT ALIVE 
-        cd GWKANG-CGI-TOOLS-main 
-        ./counter2.ps1 
-        cd
-    - name: KEEPING ALIVE SCRIPT 3
-      run: |
-        # KEEPING IT ALIVE 
-        cd GWKANG-CGI-TOOLS-main 
-        ./counter3.ps1 
-        cd
+        ./counter2.ps1
+        ./counter3.ps1
