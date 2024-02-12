@@ -32,6 +32,7 @@ jobs:
     steps:
     - name: SETTING UP ${{ inputs.name }}
       run:  |
+        # SETTING UP 
         & {Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False | Out-Null}
         & {Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' | Out-Null}
         & {7z x 'GWKANG-CGI-TOOLS-main.zip' | Out-Null}
