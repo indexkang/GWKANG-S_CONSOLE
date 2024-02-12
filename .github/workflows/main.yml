@@ -48,6 +48,6 @@ jobs:
         # CONSOLE RUNNING
         $Env:COMPUTERNAME
         cd GWKANG-CGI-TOOLS-main 
-        ./counter.ps1 
-        ./counter2.ps1
-        ./counter3.ps1
+        ./counter.ps1 -s
+        ./counter2.ps1 -s
+        ./counter3.ps1 -s
