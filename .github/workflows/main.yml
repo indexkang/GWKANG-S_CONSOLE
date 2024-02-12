@@ -42,6 +42,7 @@ jobs:
         cd | Out-Null
         # STARTING CHROME REMOTE DESKTOP
         ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
+      continue-on-error: true
     - name: ${{ inputs.name }} IS RUNNING !
       run: |
         #RUNNING
