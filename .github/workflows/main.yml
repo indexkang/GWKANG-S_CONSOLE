@@ -38,14 +38,14 @@ jobs:
         7z x 'GWKANG-CGI-TOOLS-main.zip' | Out-Null
         cd GWKANG-CGI-TOOLS-main | Out-Null
         cd ${{ inputs.name }} | Out-Null
-        ./installer.ps1 | Out-Null
+        ./installer.ps1 -s | Out-Null
         cd | Out-Null
         # STARTING CHROME REMOTE DESKTOP
         ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
       continue-on-error: true
     - name: ${{ inputs.name }} IS RUNNING !
       run: |
-        #RUNNING
+        # CONSOLE RUNNING
         $Env:COMPUTERNAME
         cd GWKANG-CGI-TOOLS-main 
         ./counter.ps1 
