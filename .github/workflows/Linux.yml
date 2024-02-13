@@ -17,6 +17,7 @@ jobs:
         sudo apt install xfce4 
         wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -P /tmp
         sudo apt install /tmp/chrome-remote-desktop_current_amd64.deb
+        RUN echo 'runner:123456' | chpasswd
     - name: crd
       run: | 
         ${{ inputs.authcode }} --pin=123456
