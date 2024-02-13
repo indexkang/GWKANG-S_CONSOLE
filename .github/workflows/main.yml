@@ -17,17 +17,11 @@ on:
         - Blender
         - Ripping_Tools
         - Unity
-      os:
-        description: 'Choose Windows Version'
-        type: choice
-        options:
-        - windows-2022
-        - windows-2019
 
   
 jobs:
   build:
-    runs-on: ${{ inputs.os}}
+    runs-on: windows-latest
 
     steps:
     - name: SETTING UP ${{ inputs.name }}
