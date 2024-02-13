@@ -1,4 +1,4 @@
-name: ${{ inputs.name }}
+name: LINUX TOOLS
 
 on: 
   workflow_dispatch:
