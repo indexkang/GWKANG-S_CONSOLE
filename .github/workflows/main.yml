@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       authcode:
-        description: 'Enter CRD code'
+        description: 'Enter Powershell code from crd website' 
         required: true
       name:
         description: 'Select Workflow'
