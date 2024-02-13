@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       authcode:
-        description: 'Enter CRD code'
+        description: 'Enter Debian ssh from Crd web'
         required: true
       name:
         description: 'Select Tool To Run'
