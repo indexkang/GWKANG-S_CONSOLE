@@ -1,4 +1,4 @@
-name: GWKANG'S CONSOLE LINUX
+name: GWKANG'S CONSOLE (LINUX)
 
 on: 
   workflow_dispatch:
