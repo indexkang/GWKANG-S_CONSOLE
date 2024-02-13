@@ -10,7 +10,7 @@ on:
         description: 'Select Tool To Run'
         type: choice
         options:
-        - blender
+        - Blender
 
 
 jobs:
