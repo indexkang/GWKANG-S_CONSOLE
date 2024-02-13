@@ -6,6 +6,11 @@ on:
       authcode:
         description: 'Enter CRD code'
         required: true
+      name:
+        description: 'Select Tool To Run'
+        type: choice
+        options:
+        - blender
 
 
 jobs:
