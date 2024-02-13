@@ -1,6 +1,6 @@
 #Authored By GW KANG
 
-name: GWKANG'S CONSOLE
+name: GWKANG'S CONSOLE (WINDOWS)
 
 on: 
   workflow_dispatch:
