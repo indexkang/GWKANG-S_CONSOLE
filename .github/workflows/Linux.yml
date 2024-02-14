@@ -19,7 +19,8 @@ jobs:
     steps:
     - name: test
       run: |
-        sudo apt install xfce4 
+        sudo apt update && sudo apt upgrade -y
+        sudo apt install xfce4 -y
         wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb -P /tmp
         sudo apt install /tmp/chrome-remote-desktop_current_amd64.deb
         echo 'runner:123456' | sudo chpasswd
@@ -28,7 +29,7 @@ jobs:
     - name: crd
       run: | 
         ${{ inputs.authcode }} --pin=123456
-        sudo apt install blender
+        sudo apt install blender -y
         #!/bin/bash
         # in file ~/bin/keepalive.sh
         while true ; do
