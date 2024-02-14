@@ -14,7 +14,7 @@ on:
         options:
         - Windows
         - FF_Ripper
-        - Blender
+        - Blender (USE LINUX TOOLS)
         - Ripping_Tools
         - Unity
 
