@@ -9,7 +9,7 @@ on:
         description: 'Enter Powershell code from crd website' 
         required: true
       name:
-        description: 'Select Workflow'
+        description: 'Select Any Tool to Run'
         type: choice
         options:
         - Windows
