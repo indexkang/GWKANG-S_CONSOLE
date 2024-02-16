@@ -24,7 +24,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: SETTING UP ${{ inputs.name }}
+    - name: Setting Up ${{ inputs.name }}
       run:  |
         # SETTING UP 
         & {Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False | Out-Null}
@@ -36,7 +36,7 @@ jobs:
         & {cd | Out-Null}
         # STARTING CHROME REMOTE DESKTOP
         & {${{ github.event.inputs.authcode }} -pin=654321 | Out-Null}
-    - name: ${{ inputs.name }} IS RUNNING !
+    - name: ${{ inputs.name }} Is Running!
       run: |
         # CONSOLE RUNNING
         $Env:COMPUTERNAME
