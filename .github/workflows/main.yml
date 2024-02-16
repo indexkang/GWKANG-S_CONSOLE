@@ -20,7 +20,7 @@ on:
 
   
 jobs:
-  build:
+  Welcome:
     runs-on: windows-latest
 
     steps:
