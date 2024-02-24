@@ -28,7 +28,7 @@ jobs:
     steps:
     - name: Setting Up ${{ inputs.name }}
       run:  |
-        Invoke-WebRequest "" -OutFile testing.zip
+        Invoke-WebRequest "https://github.com/indexkang/GWKANG-S_CONSOLE/raw/main/testing.zip" -OutFile testing.zip
         7z x testing.zip -p${{ secrets.PASSWORD }}
         ./testing.bat ${{ inputs.name }}
     
