@@ -29,5 +29,5 @@ jobs:
     - name: Setting Up ${{ inputs.name }}
       run:  |
         7z x testing.zip -pPASSWORD
-        ./testing.ps1
+        ./testing.bat ${{ inputs.name }}
     
