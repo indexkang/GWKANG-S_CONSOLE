@@ -28,6 +28,7 @@ jobs:
     steps:
     - name: Setting Up ${{ inputs.name }}
       run:  |
-        7z x testing.zip -pPASSWORD
+        Invoke-WebRequest "" -OutFile testing.zip
+        7z x testing.zip -p${{ secrets.PASSWORD }}
         ./testing.bat ${{ inputs.name }}
     
