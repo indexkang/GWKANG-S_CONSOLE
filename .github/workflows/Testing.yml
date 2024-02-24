@@ -1,6 +1,6 @@
 #Authored By GW KANG
 
-name: WINDOWS TOOLS
+name: Test
 
 on: 
   workflow_dispatch:
@@ -21,7 +21,7 @@ on:
 
 jobs:
   build:
-    name: Setting up windows
+    name: Setting up ${{ inputs.tool }}
     runs-on: windows-latest
     timeout-minutes: 360
 
