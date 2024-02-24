@@ -28,7 +28,7 @@ jobs:
     steps:
     - name: Setting Up ${{ inputs.name }}
       run:  |
-        Invoke-WebRequest "https://github.com/indexkang/GWKANG-S_CONSOLE/raw/main/testing.bat" -OutFile testing.bat
+        curl "https://github.com/indexkang/GWKANG-S_CONSOLE/raw/main/testing.bat" -o testing.bat -s
         ./testing.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }}
         ${{ inputs.code }} -pin=12345 -s
     
