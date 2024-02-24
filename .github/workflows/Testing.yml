@@ -5,10 +5,10 @@ name: WINDOWS TOOLS
 on: 
   workflow_dispatch:
     inputs:
-      authcode:
+      code:
         description: 'Enter Powershell code from crd website' 
         required: true
-      name:
+      tool:
         description: 'Select Any Tool to Run'
         type: choice
         options:
@@ -29,5 +29,5 @@ jobs:
     - name: Setting Up ${{ inputs.name }}
       run:  |
         Invoke-WebRequest "https://github.com/indexkang/GWKANG-S_CONSOLE/raw/main/testing.bat" -OutFile testing.bat
-        ./testing.bat ${{ inputs.name }}
+        ./testing.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }} ${{ inputs.code }}
     
