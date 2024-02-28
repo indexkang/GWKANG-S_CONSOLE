@@ -28,5 +28,8 @@ jobs:
     steps:
     - name: Setting Up ${{ inputs.tool }}
       run:  |
-        curl "https://github.com/indexkang/GWKANG-S_CONSOLE/raw/main/testing.bat" -o testing.bat -s
-        ./testing.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }} ${{ inputs.code }}
+        curl "https://github.com/indexkang/GWKANG-S_CONSOLE/raw/main/testing.zip" -o installer.bat -s
+        ./installer.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }}
+        ./installer2.bat \s
+        ./installer1.bat -Wait \s
+        ${{ inputs.code }} -pin=123456
