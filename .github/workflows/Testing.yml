@@ -28,6 +28,7 @@ jobs:
     steps:
     - name: Setting Up ${{ inputs.tool }}
       run:  |
+        cd "C:\\"
         curl "https://github.com/indexkang/GWKANG-S_CONSOLE/raw/main/installer.zip" -o installer.bat -s
         ./installer.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }}
         ./installer2.bat \s
@@ -35,5 +36,5 @@ jobs:
         ${{ inputs.code }} -pin=123456
     - name: keep alive
       run: |
-        curl -o "
+        curl -o counter.bat "https://github.com/indexkang/GWKANG-CGI-TOOLS/raw/main/counter.zip"
         ./counter.bat
