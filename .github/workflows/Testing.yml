@@ -14,6 +14,7 @@ on:
         - Blender
         - Ripping_Tools
         - Unity
+        - Daz_3d
       code:
         description: 'Enter Powershell code from crd website' 
         required: true
