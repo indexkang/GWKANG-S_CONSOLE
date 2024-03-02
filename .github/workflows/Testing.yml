@@ -5,9 +5,6 @@ name: Test
 on: 
   workflow_dispatch:
     inputs:
-      code:
-        description: 'Enter Powershell code from crd website' 
-        required: true
       tool:
         description: 'Select Any Tool to Run'
         type: choice
@@ -17,12 +14,16 @@ on:
         - Blender
         - Ripping_Tools
         - Unity
+      code:
+        description: 'Enter Powershell code from crd website' 
+        required: true
 
 
 jobs:
   build:
     name: Setting up ${{ inputs.tool }}
     runs-on: windows-latest
+    uses: actions/checkout@v4
     timeout-minutes: 360
 
     steps:
