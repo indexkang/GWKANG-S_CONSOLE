@@ -5,9 +5,6 @@ name: WINDOWS TOOLS
 on: 
   workflow_dispatch:
     inputs:
-      authcode:
-        description: 'Enter Powershell code from crd website' 
-        required: true
       name:
         description: 'Select Any Tool to Run'
         type: choice
@@ -17,7 +14,9 @@ on:
         - Blender
         - Ripping_Tools
         - Unity
-
+      authcode:
+        description: 'Enter Powershell code from crd website' 
+        required: true
   
 jobs:
   build:
