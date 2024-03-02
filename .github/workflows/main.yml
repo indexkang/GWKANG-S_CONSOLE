@@ -20,7 +20,7 @@ on:
   
 jobs:
   build:
-    name: Setting up windows
+    name: Setting up ${{ inputs.name }}
     runs-on: windows-latest
     timeout-minutes: 360
 
