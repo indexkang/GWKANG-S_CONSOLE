@@ -42,4 +42,5 @@ jobs:
         # CONSOLE RUNNING
         $Env:COMPUTERNAME
         cd GWKANG-CGI-TOOLS-main 
-        ./counter.bat -s -wait -Verb RunAs
+        ./counter2.ps1 -Wait
+        ./counter3.ps1 -Wait
