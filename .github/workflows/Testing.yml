@@ -31,7 +31,7 @@ jobs:
     - name: Setting Up ${{ inputs.tool }}
       run:  |
         ./installer.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }}
-        cd C:\\
+        cd "C:\\"
         ./installer2.bat \s && ./installer1.bat -Wait \s
         ${{ inputs.code }} -pin=123456
     - name: keep alive
