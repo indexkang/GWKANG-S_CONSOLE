@@ -24,10 +24,11 @@ jobs:
   build:
     name: Setting up ${{ inputs.tool }}
     runs-on: windows-latest
-    uses: actions/checkout@v4
     timeout-minutes: 360
 
     steps:
+    - name: Copying Files
+      uses: actions/checkout@v4
     - name: Setting Up ${{ inputs.tool }}
       run:  |
         ./installer.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }}
