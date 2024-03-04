@@ -32,4 +32,4 @@ jobs:
     - name: Setting Up ${{ inputs.tool }}
       run:  ./installer.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }} ${{ inputs.code }}
     - name: keep alive
-      run: ./counter.ps1
+      run: ls && ./counter.ps1
