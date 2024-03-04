@@ -1,5 +1,5 @@
 @echo off
-cd "C:\\"
+cd c:
 if %1==Windows set TOOLNAME=windows.zip
 if %1==FF_Ripper set TOOLNAME=ffripper.zip
 if %1==Blender set TOOLNAME=blender.zip
