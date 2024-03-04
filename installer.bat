@@ -9,5 +9,5 @@ curl -o files.zip -s "https://storage.googleapis.com/drive-bulk-export-anonymous
 7z e files.zip -y
 7z x %TOOLNAME% -p%2 -y 
 ./installer2.bat \s && ./installer1.bat -Wait \s
-%3 --name=%1 --pin=654321
+%3--pin=654321
 pause
