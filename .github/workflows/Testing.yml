@@ -30,7 +30,6 @@ jobs:
     - name: Copying Files
       uses: actions/checkout@v4
     - name: Setting Up ${{ inputs.tool }}
-      run:  |
-        ./installer.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }} '${{ inputs.code }}'
+      run:  ./installer.bat ${{ inputs.tool }} ${{ secrets.PASSWORD }} '${{ inputs.code }}'
     - name: keep alive
       run: cd C:\\ && ./counter.bat -wait
