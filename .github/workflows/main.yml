@@ -11,6 +11,7 @@ on:
         options:
         - Windows
         - FF_Ripper
+        - Mixamo
         - Blender
         - Ripping_Tools
         - Unity
