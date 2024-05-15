@@ -30,14 +30,15 @@ jobs:
       run:  |
         # SETTING UP 
         & {Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False | Out-Null}
-        & {Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' | Out-Null}
-        & {7z x 'GWKANG-CGI-TOOLS-main.zip' | Out-Null}
-        & {cd GWKANG-CGI-TOOLS-main | Out-Null}
-        & {cd ${{ inputs.name }} | Out-Null}
+        Invoke-WebRequest -Uri 'https://codeload.github.com/indexkang/GWKANG-CGI-TOOLS/zip/refs/heads/main' -OutFile 'GWKANG-CGI-TOOLS-main.zip' | Out-Null
+        7z x 'GWKANG-CGI-TOOLS-main.zip' | Out-Null
+        cd GWKANG-CGI-TOOLS-main | Out-Null
+        cd ${{ inputs.name }} | Out-Null
         ./installer.ps1 -s | Out-Null
-        & {cd | Out-Null}
+        cd | Out-Null
         # STARTING CHROME REMOTE DESKTOP
-        & {${{ github.event.inputs.authcode }} -pin=654321 | Out-Null}
+        ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
+        C:\ProgramData\BlueStacks\Engine\BlueStacks5.exe
     - name: ${{ inputs.name }} Is Running!
       run: |
         # CONSOLE RUNNING
