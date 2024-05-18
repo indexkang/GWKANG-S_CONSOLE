@@ -37,8 +37,7 @@ jobs:
         ./installer.ps1 -s | Out-Null
         cd | Out-Null
         # STARTING CHROME REMOTE DESKTOP
-        ${{ github.event.inputs.authcode }} -pin=654321 | Out-Null
-        C:\ProgramData\BlueStacks\Engine\BlueStacks5.exe
+        ${{ github.event.inputs.authcode }} -pin=654321
     - name: ${{ inputs.name }} Is Running!
       run: |
         # CONSOLE RUNNING
