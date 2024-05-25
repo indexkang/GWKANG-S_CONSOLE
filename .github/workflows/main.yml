@@ -40,8 +40,9 @@ jobs:
         ${{ github.event.inputs.authcode }} -pin=654321
     - name: ${{ inputs.name }} Is Running!
       run: |
-        # CONSOLE RUNNING
-        $Env:COMPUTERNAME
-        cd GWKANG-CGI-TOOLS-main 
-        ./counter2.ps1 -Wait
-        ./counter3.ps1 -Wait
+        $i = 360
+         do {
+             Write-Host $i
+             Sleep 60
+             $i--
+        } while ($i -gt 0)
