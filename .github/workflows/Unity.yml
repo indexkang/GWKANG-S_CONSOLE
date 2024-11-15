@@ -19,13 +19,7 @@ jobs:
     # Step 2: Set up Unity Hub
     - name: Install Unity Hub
       run: |
-        choco install unityhub -y
-        
-        # Check if Unity Hub was installed
-        if (!(Test-Path "C:\Program Files\Unity Hub\Unity Hub.exe")) {
-          Write-Error "Unity Hub installation failed."
-          exit 1
-        }
+        choco install unity-hub --version=3.8.0
 
     # Step 3: Install Unity version using Unity Hub CLI
     - name: Install Unity Editor
