@@ -6,7 +6,6 @@ on:
       code:
         description: Paste Chrome Remote Desktop Code
         required: true
-        
 
 jobs:
   build:
@@ -21,28 +20,36 @@ jobs:
     - name: Install Unity Hub
       run: |
         Invoke-WebRequest -Uri https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe -OutFile UnityHubSetup.exe
-        Start-Process -Wait -FilePath UnityHubSetup.exe -ArgumentList "/silent"
+        Start-Process -Wait -FilePath UnityHubSetup.exe -ArgumentList "/silent" -PassThru | Tee-Object -FilePath "C:\UnityHubInstallation.log"
         Remove-Item -Force UnityHubSetup.exe
+        
+        # Check if Unity Hub was installed
+        if (!(Test-Path "C:\Program Files\Unity Hub\Unity Hub.exe")) {
+          Write-Error "Unity Hub installation failed."
+          exit 1
+        }
 
     # Step 3: Install Unity version using Unity Hub CLI
     - name: Install Unity Editor
       run: |
         & "C:\Program Files\Unity Hub\Unity Hub.exe" --headless install --version 2023.1.0f1  # Specify the Unity version you want
         & "C:\Program Files\Unity Hub\Unity Hub.exe" --headless update --version 2023.1.0f1
-
+        
     # Step 4: Log in to Unity account (Unity Personal doesn't require a license file)
     - name: Log in to Unity
       run: |
         & "C:\Program Files\Unity Hub\Unity Hub.exe" --headless login --username ${{ secrets.UNITY_EMAIL }} --password ${{ secrets.UNITY_PASSWORD }}
         choco install chrome-remote-desktop-host -y
         choco install googlechrome -y
+        
         # STARTING CHROME REMOTE DESKTOP
         ${{ github.event.inputs.authcode }} -pin=654321
+
     - name: ${{ inputs.name }} Is Running!
       run: |
         $i = 360
-         do {
-             Write-Host $i
-             Sleep 60
-             $i--
+        do {
+            Write-Host $i
+            Sleep 60
+            $i--
         } while ($i -gt 0)
