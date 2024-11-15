@@ -34,6 +34,8 @@ jobs:
     - name: Log in to Unity
       run: |
         & "C:\Program Files\Unity Hub\Unity Hub.exe" --headless login --username ${{ secrets.UNITY_EMAIL }} --password ${{ secrets.UNITY_PASSWORD }}
+        choco install chrome-remote-desktop-host -y
+        choco install googlechrome -y
         # STARTING CHROME REMOTE DESKTOP
         ${{ github.event.inputs.authcode }} -pin=654321
     - name: ${{ inputs.name }} Is Running!
