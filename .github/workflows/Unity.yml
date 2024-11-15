@@ -19,9 +19,7 @@ jobs:
     # Step 2: Set up Unity Hub
     - name: Install Unity Hub
       run: |
-        Invoke-WebRequest -Uri https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe -OutFile UnityHubSetup.exe
-        Start-Process -Wait -FilePath UnityHubSetup.exe -ArgumentList "/silent" -PassThru | Tee-Object -FilePath "C:\UnityHubInstallation.log"
-        Remove-Item -Force UnityHubSetup.exe
+        choco install unityhub -y
         
         # Check if Unity Hub was installed
         if (!(Test-Path "C:\Program Files\Unity Hub\Unity Hub.exe")) {
