@@ -1,12 +1,12 @@
 name: Unity CI Workflow (Windows)
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      code:
+        description: Paste Chrome Remote Desktop Code
+        required: true
+        
 
 jobs:
   build:
