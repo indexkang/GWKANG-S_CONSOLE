@@ -20,6 +20,7 @@ jobs:
     - name: Install Unity Hub
       run: |
         choco install unity-hub --ignore-checksums
+        invoke-webrequest -uri "https://download.unity3d.com/download_unity/ffc62b691db5/Windows64EditorInstaller/UnitySetup64-2019.4.40f1.exe" -outfile "unity.exe"
     # Step 3: Log in to Unity account (Unity Personal doesn't require a license file)
     - name: Log in to Unity
       run: |
