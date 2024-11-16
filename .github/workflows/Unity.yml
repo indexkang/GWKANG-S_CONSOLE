@@ -24,16 +24,10 @@ jobs:
         Start-Process "$env:USERPROFILE\Downloads\Unity.exe" -ArgumentList "/S" -Wait
         
     # Step 3: Log in to Unity account (Unity Personal doesn't require a license file)
-    - name: Log in to Unity
+    - name: Setting up remote connection 
       run: |
-        & "C:\Program Files\Unity Hub\Unity Hub.exe" --headless login --username ${{ secrets.UNITY_EMAIL }} --password ${{ secrets.UNITY_PASSWORD }}
         choco install chrome-remote-desktop-host -y
         choco install googlechrome -y
-        
-    # Step 4: Install Unity version using Unity Hub CLI
-    - name: Install Unity Editor
-      run: |
-        & "C:\Program Files\Unity Hub\Unity Hub.exe" --no-prompt-install --version 2019.4.40f1
         ${{ inputs.code }} -pin=654321
 
     - name: ${{ inputs.name }} Is Running!
