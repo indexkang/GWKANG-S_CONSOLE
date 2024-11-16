@@ -19,6 +19,8 @@ jobs:
         Start-Process "C:\\Users\$Env:USERNAME\Downloads\Unity.exe" -ArgumentList "/S" -Wait
         
     - name: Setting up remote connection 
+      env:
+        $RUN_NUMBER: ${{ github.run_number }}
       run: |
         $env:COMPUTERNAME = "GWKANG $GITHUB_RUN_NUMBER"
         ${{ inputs.code }} -pin=654321
