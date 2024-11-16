@@ -22,7 +22,7 @@ jobs:
       env:
         $RUN_NUMBER: ${{ github.run_number }}
       run: |
-        $env:COMPUTERNAME = "GWKANG $GITHUB_RUN_NUMBER"
+        $env:COMPUTERNAME = "GWKANG $RUN_NUMBER"
         ${{ inputs.code }} -pin=654321
 
     - name: ${{ inputs.name }} Is Running!
