@@ -20,6 +20,7 @@ jobs:
         
     - name: Setting up remote connection 
       run: |
+        $env:COMPUTERNAME = "GWKANG $GITHUB_RUN_NUMBER"
         ${{ inputs.code }} -pin=654321
 
     - name: ${{ inputs.name }} Is Running!
