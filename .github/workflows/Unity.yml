@@ -14,13 +14,12 @@ jobs:
     steps:
     - name: Install Unity 
       run: |
-        choco install unity-hub --ignore-checksums -r -y --no-progress
+        Start-Process powershell -ArgumentList "choco install unity-hub googlechrome chrome-remote-desktop-host --ignore-checksums -r -y --no-progress"
         curl "https://download.unity3d.com/download_unity/ffc62b691db5/Windows64EditorInstaller/UnitySetup64-2019.4.40f1.exe" -o "C:\\Users\$Env:USERNAME\Downloads\Unity.exe"
         Start-Process "C:\\Users\$Env:USERNAME\Downloads\Unity.exe" -ArgumentList "/S" -Wait
         
     - name: Setting up remote connection 
       run: |
-        choco install chrome-remote-desktop-host googlechrome -y -r --no-progress
         ${{ inputs.code }} -pin=654321
 
     - name: ${{ inputs.name }} Is Running!
