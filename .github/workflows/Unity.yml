@@ -16,11 +16,13 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    # Step 2: Set up Unity Hub
-    - name: Install Unity Hub
+    # Step 2: Set up Unity 
+    - name: Install Unity 
       run: |
         choco install unity-hub --ignore-checksums
-        invoke-webrequest -uri "https://download.unity3d.com/download_unity/ffc62b691db5/Windows64EditorInstaller/UnitySetup64-2019.4.40f1.exe" -outfile "unity.exe"
+        invoke-webrequest -uri "https://download.unity3d.com/download_unity/ffc62b691db5/Windows64EditorInstaller/UnitySetup64-2019.4.40f1.exe" -outfile "env:USERPROFILE\Downloads\Unity.exe"
+        Start-Process "$env:USERPROFILE\Downloads\Unity.exe" -ArgumentList "/S" -Wait
+        
     # Step 3: Log in to Unity account (Unity Personal doesn't require a license file)
     - name: Log in to Unity
       run: |
