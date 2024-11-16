@@ -23,7 +23,8 @@ jobs:
 
     # Step 3: Install Unity version using Unity Hub CLI
     - name: Install Unity Editor
-      run: & "C:\Program Files\Unity Hub\Unity Hub.exe" --no-analytics --install-version 2019.4.40f1
+      run: |
+        & "C:\Program Files\Unity Hub\Unity Hub.exe" --no-analytics --install-version 2019.4.40f1
 
     # Step 4: Log in to Unity account (Unity Personal doesn't require a license file)
     - name: Log in to Unity
