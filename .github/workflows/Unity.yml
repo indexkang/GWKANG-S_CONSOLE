@@ -19,7 +19,7 @@ jobs:
     # Step 2: Set up Unity Hub
     - name: Install Unity Hub
       run: |
-        choco install unity-hub --version=2.2.2 --ignore-checksums
+        choco install unity-hub --ignore-checksums
 
     # Step 3: Install Unity version using Unity Hub CLI
     - name: Install Unity Editor
