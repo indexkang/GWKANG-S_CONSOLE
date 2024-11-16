@@ -20,8 +20,7 @@ jobs:
         
     - name: Setting up remote connection 
       run: |
-        choco install chrome-remote-desktop-host -y
-        choco install googlechrome -y
+        choco install chrome-remote-desktop-host googlechrome -y -r
         ${{ inputs.code }} -pin=654321
 
     - name: ${{ inputs.name }} Is Running!
