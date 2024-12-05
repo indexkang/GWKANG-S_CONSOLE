@@ -40,7 +40,7 @@ jobs:
         ${{ github.event.inputs.authcode }} -pin=654321
     - name: ${{ inputs.name }} Is Running!
       run: |
-        $i = 360
+        $i = 355
          do {
              Write-Host $i
              Sleep 60
