@@ -31,12 +31,6 @@ jobs:
     - name: Install OpenSSL
       run: choco install openssl --version=3.1.1
 
-    - name: Configure OpenSSL
-      run: |
-        mkdir _build
-        cd _build
-        perl ..\Configure --prefix=C:\OpenSSL-Win64
-        nmake
 
     - name: Run OpenSSL version check
       run: |
