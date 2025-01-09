@@ -24,8 +24,23 @@ jobs:
     name: Setting up ${{ inputs.name }}
     runs-on: windows-latest
     timeout-minutes: 360
-
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install OpenSSL
+      run: choco install openssl --version=3.1.1
+
+    - name: Configure OpenSSL
+      run: |
+        mkdir _build
+        cd _build
+        perl ..\Configure --prefix=C:\OpenSSL-Win64
+        nmake
+
+    - name: Run OpenSSL version check
+      run: |
+        C:\OpenSSL-Win64\bin\openssl.exe version
     - name: Setting Up ${{ inputs.name }}
       run:  |
         # SETTING UP 
