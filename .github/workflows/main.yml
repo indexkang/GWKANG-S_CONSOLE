@@ -30,11 +30,6 @@ jobs:
 
     - name: Install OpenSSL
       run: choco install openssl --version=3.1.1
-
-
-    - name: Run OpenSSL version check
-      run: |
-        C:\OpenSSL-Win64\bin\openssl.exe version
     - name: Setting Up ${{ inputs.name }}
       run:  |
         # SETTING UP 
